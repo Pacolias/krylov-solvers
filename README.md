@@ -26,6 +26,7 @@ krylov-solvers/
 ├── plots/                  # Generated convergence history plots
 ├── requirements.txt        # Python dependencies
 └── README.md
+```
 
 ## ⚙️ Installation & Requirements
 This project requires **Python 3.8+**. The main dependencies are `numpy`, `scipy` (for reading Matrix Market files and generating ILU preconditioners) and `matplotlib` (for plotting convergence histories).
