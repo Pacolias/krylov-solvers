@@ -18,8 +18,12 @@ All implementations support **left-preconditioning** to accelerate convergence o
 ```text
 krylov-solvers/
 ├── data/                   # Directory to store .mtx (Matrix Market) files
-├── src/                    
-│   └── krylov_solvers.py   # Core algorithms (cg, gmres, bicgstab)
+src/                        # Core algorithms (cg, gmres, bicgstab)
+├── __init__.py             # File with the imports
+├── utils.py                # Common auxiliary functions
+├── cg.py                   # Conjugate Gradient script
+├── gmres.py                # GMRES script
+└── bicgstab.py             # BiCGSTAB script
 ├── scripts/                
 │   ├── exp_spd.py          # Experiments for SPD matrices (CG vs GMRES vs BiCGSTAB)
 │   └── exp_asymmetric.py   # Experiments for asymmetric matrices (GMRES vs BiCGSTAB)
