@@ -6,10 +6,11 @@ def gmres(A, b, x0=None, tol=1e-6, max_iter=1000):
     """
 
     N = len(b)
+
     if x0 is None:
         x = np.zeros(N)
-    else:
-        x = x0.copy()
+    
+    x = x0.copy()
 
     # 1. Initialization
     r0 = b - A @ x 
