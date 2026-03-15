@@ -10,7 +10,7 @@ def cg(A, b, x0=None, M=None, tol=1e-6, max_iter=1000):
     N = len(b)
     
     if x0 is None:
-        x = np.zeros(N)
+        x0 = np.zeros(N)
     
     x = x0.copy()
 
@@ -24,7 +24,7 @@ def cg(A, b, x0=None, M=None, tol=1e-6, max_iter=1000):
     tol_abs = tol * res_history[0] if res_history[0] != 0 else tol 
 
     for i in range(max_iter):
-        if res_history[-1] < tol_abs
+        if res_history[-1] < tol_abs:
             break
 
         q = A @ p 

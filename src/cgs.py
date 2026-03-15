@@ -9,7 +9,7 @@ def cgs(A, b, x0=None, tol=1e-6, max_iter=1000):
     N = len(b)
 
     if x0 is None:
-        x = np.zeros(N)
+        x0 = np.zeros(N)
     
     x = x0.copy()
 
