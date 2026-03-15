@@ -4,7 +4,7 @@ def gmres(A, b, x0=None, tol=1e-6, max_iter=1000):
     """
     Standard (not preconditioned) GMRES Method
     """
-    
+
     N = len(b)
     if x0 is None:
         x = np.zeros(N)
@@ -41,7 +41,7 @@ def gmres(A, b, x0=None, tol=1e-6, max_iter=1000):
         w = A @ V[:, n]
 
         # Modified Gram-Schmidt
-        for i in range(n + 1)
+        for i in range(n + 1):
             H[i, n] = np.dot(w, V[:, i])
             w = w - H[i, n] * V[:, i]
 
