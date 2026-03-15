@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDEs configuration files (VSCode, PyCharm)
+.vscode/
+.idea/
+
+# OS hidden files (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# (OPTIONAL) Large matrices
+# If the Matrix Market matrices are very large and GitHub gives an error
+# when uploading the project, remove the '#' from the following line:
+# data/*.mtx
