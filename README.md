@@ -4,31 +4,38 @@
 
 ## 📌 Overview
 
-Iterative methods based on Krylov subspaces are essential for solving large-scale, sparse linear systems $Ax = b$ where direct methods (like LU factorization) are computationally prohibitive. 
+Iterative methods based on Krylov subspaces are essential for solving large-scale, sparse linear systems $A\mathbf{x} = \mathbf{b}$ where direct methods (like LU factorization) are computationally prohibitive. 
 
-This project provides custom, educational, yet highly functional implementations of three fundamental Krylov solvers:
-- **CG** (Conjugate Gradient) - For Symmetric Positive Definite (SPD) matrices.
+This project provides custom, educational, yet highly functional and matrix-free implementations of five fundamental Krylov solvers:
+- **CG** (Conjugate Gradient) - For Symmetric Positive Definite (SPD) matrices. Includes support for preconditioning.
 - **GMRES** (Generalized Minimal Residual) - For general asymmetric matrices (based on the Arnoldi iteration).
-- **BiCGSTAB** (Biconjugate Gradient Stabilized) - A transpose-free variant for asymmetric matrices with short recurrences.
-
-All implementations support **left-preconditioning** to accelerate convergence on ill-conditioned real-world matrices.
+- **BiCG** (Biconjugate Gradient) - For general asymmetric matrices (based on the Lanczos biorthogonalization).
+- **CGS** (Conjugate Gradient Squared) - A transpose-free variant of BiCG.
+- **BiCGSTAB** (Biconjugate Gradient Stabilized) - A transpose-free variant that smooths the irregular convergence of CGS.
 
 ## 📂 Repository Structure
 
 ```text
 krylov-solvers/
-├── data/                   # Directory to store .mtx (Matrix Market) files
-src/                        # Core algorithms (cg, gmres, bicgstab)
-├── __init__.py             # File with the imports
-├── utils.py                # Common auxiliary functions
-├── cg.py                   # Conjugate Gradient script
-├── gmres.py                # GMRES script
-└── bicgstab.py             # BiCGSTAB script
+├── data/                   # SuiteSparse Matrix Collection files
+│   ├── bcsstk14.mtx        # SPD matrix (Structural engineering)
+│   ├── nos6.mtx            # SPD matrix (Finite differences)
+│   ├── pores_2.mtx         # Asymmetric matrix (Computational Fluid Dynamics)
+│   └── sherman1.mtx        # Asymmetric matrix (Oil reservoir simulation)
+├── src/                    # Core algorithms
+│   ├── __init__.py         # Package exports
+│   ├── utils.py            # Common auxiliary functions
+│   ├── cg.py               # Conjugate Gradient (CG & PCG) script
+│   ├── gmres.py            # GMRES script
+│   ├── bicg.py             # BiCG script
+│   ├── cgs.py              # CGS script
+│   └── bicgstab.py         # BiCGSTAB script
 ├── scripts/                
-│   ├── exp_spd.py          # Experiments for SPD matrices (CG vs GMRES vs BiCGSTAB)
-│   └── exp_asymmetric.py   # Experiments for asymmetric matrices (GMRES vs BiCGSTAB)
-├── plots/                  # Generated convergence history plots
+│   ├── exp_spd.py          # Experiments for SPD matrices (CG vs PCG with Jacobi)
+│   └── exp_asym.py         # Experiments for asymmetric matrices (GMRES vs BiCG vs CGS vs BiCGSTAB)
+├── plots/                  # Generated convergence history plots (.png / .jpg)
 ├── requirements.txt        # Python dependencies
+├── .gitignore              # Git ignore file (excludes __pycache__, etc.)
 └── README.md
 ```
 
