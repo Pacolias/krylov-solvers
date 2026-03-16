@@ -45,7 +45,7 @@ This project requires **Python 3.8+**. The main dependencies are `numpy`, `scipy
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/krylov-solvers.git](https://github.com/YOUR_USERNAME/krylov-solvers.git)
+git clone https://github.com/Pacolias/krylov-solvers.git
 cd krylov-solvers
 ```
 
@@ -61,7 +61,7 @@ pip install -r requirements.txt
 ```
 
 ## 🚀 Usage & Experiments
-To reproduce the experiments, you will need to download sparse matrices in Matrix Market format (`.mtx`) from [Matrix Market](https://math.nist.gov/MatrixMarket/) and place them in the `data/` folder.
+To reproduce the experiments, you will need to download sparse matrices in Matrix Market format (`.mtx`) from [SuiteSparse Matrix Collection](https://sparse.tamu.edu/) and place them in the `data/` folder.
 
 Recommended matrices for testing:
 * **SPD Matrix**: `bcsstk14.mtx` (Structural engineering)
@@ -77,7 +77,7 @@ python scripts/exp_spd.py
 python scripts/exp_asymmetric.py
 ```
 
-The scripts will output the number of iterations and the execution time for each method and will display a semi-logarithmic plot comparing their convergence histories ($\|\|r_k\|\|_2$ vs. iterations).
+The scripts will output the number of iterations and the execution time for each method and will display a semi-logarithmic plot comparing their convergence histories ($\|r_k\|_2 / \|r_0\|_2$ vs. iterations).
 
 ## 📖 Theoretical Background
 The mathematical derivation and convergence analysis of these algorithms are thoroughly detailed in the accompanying thesis document, heavily based on the theoretical frameworks provided by:
