@@ -77,7 +77,7 @@ python scripts/exp_spd.py
 python scripts/exp_asymmetric.py
 ```
 
-The scripts will output the number of iterations and the execution time for each method and will display a semi-logarithmic plot comparing their convergence histories ($\|r_k\|_2 / \|r_0\|_2$ vs. iterations).
+The scripts will output the number of iterations and the execution time for each method and will display a semi-logarithmic plot comparing their convergence histories ($\|r_k\|_2/\|r_0\|_2$ vs. iterations).
 
 ## 📖 Theoretical Background
 The mathematical derivation and convergence analysis of these algorithms are thoroughly detailed in the accompanying thesis document, heavily based on the theoretical frameworks provided by:
