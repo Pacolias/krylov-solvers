@@ -4,7 +4,7 @@
 
 ## 📌 Overview
 
-Iterative methods based on Krylov subspaces are essential for solving large-scale, sparse linear systems $A\mathbf{x} = \mathbf{b}$ where direct methods (like LU factorization) are computationally prohibitive. 
+Iterative methods based on Krylov subspaces are essential for solving large-scale, sparse linear systems $A\mathbf{x} = \mathbf{b}$ where direct methods are computationally prohibitive. 
 
 This project provides custom, educational, yet highly functional and matrix-free implementations of five fundamental Krylov solvers:
 - **CG** (Conjugate Gradient) - For Symmetric Positive Definite (SPD) matrices. Includes support for preconditioning.
