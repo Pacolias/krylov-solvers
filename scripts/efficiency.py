@@ -75,10 +75,10 @@ def solve_efficiency(matrix_path, name, max_iter):
     # Graphs: Error vs Time
     plt.figure(figsize=(10, 6))
     
-    # Plot using time arrays (X) vs history (Y)
+    # Plot using time arrays (X) vs history (Y) - Only GMRES and BiCGSTAB as requested
     plt.semilogy(times['GMRES'], histories['GMRES'], label='GMRES', linewidth=2.5, color='black')
-    plt.semilogy(times['BiCG'], histories['BiCG'], label='BiCG', linewidth=1.5, alpha=0.8, color='blue')
-    plt.semilogy(times['CGS'], histories['CGS'], label='CGS', linewidth=1.5, alpha=0.7, color='green')
+    # plt.semilogy(times['BiCG'], histories['BiCG'], label='BiCG', linewidth=1.5, alpha=0.8, color='blue')
+    # plt.semilogy(times['CGS'], histories['CGS'], label='CGS', linewidth=1.5, alpha=0.7, color='green')
     plt.semilogy(times['BiCGSTAB'], histories['BiCGSTAB'], label='BiCGSTAB', linewidth=2, color='red')
     
     plt.axhline(y=1e-6, color='gray', linestyle=':', label='Tolerancia ($10^{-6}$)')
@@ -88,7 +88,6 @@ def solve_efficiency(matrix_path, name, max_iter):
     plt.ylabel('Residuo relativo $||r^n||_2 / ||r^0||_2$')
     
     plt.ylim(bottom=1e-8)
-    
     plt.grid(True, which="both", ls="--", alpha=0.5)
     plt.legend()
     
