@@ -2,7 +2,7 @@
 
 > Python implementations of Krylov subspace methods for solving large sparse linear systems.
 
-## 📌 Overview
+## Overview
 
 Iterative methods based on Krylov subspaces are essential for solving large-scale, sparse linear systems $A\mathbf{x} = \mathbf{b}$ where direct methods are computationally prohibitive. 
 
@@ -13,7 +13,7 @@ This project provides custom, educational, yet highly functional and matrix-free
 - **CGS** (Conjugate Gradient Squared) - A transpose-free variant of BiCG.
 - **BiCGSTAB** (Biconjugate Gradient Stabilized) - A transpose-free variant that smooths the irregular convergence of CGS.
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 krylov-solvers/
@@ -39,7 +39,7 @@ krylov-solvers/
 └── README.md
 ```
 
-## ⚙️ Installation & Requirements
+## Installation & Requirements
 This project requires **Python 3.8+**. The main dependencies are `numpy`, `scipy` (for reading Matrix Market files and generating ILU preconditioners) and `matplotlib` (for plotting convergence histories).
 
 1. Clone the repository:
@@ -60,7 +60,7 @@ source venv/bin/activate  # On Windows use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 🚀 Usage & Experiments
+## Usage & Experiments
 To reproduce the experiments, you will need to download sparse matrices in Matrix Market format (`.mtx`) from [SuiteSparse Matrix Collection](https://sparse.tamu.edu/) and place them in the `data/` folder.
 
 Recommended matrices for testing:
@@ -79,8 +79,12 @@ python scripts/exp_asymmetric.py
 
 The scripts will output the number of iterations and the execution time for each method and will display a semi-logarithmic plot comparing their convergence histories ($\|r_k\|_2/\|r_0\|_2$ vs. iterations).
 
-## 📖 Theoretical Background
+## Theoretical Background
 The mathematical derivation and convergence analysis of these algorithms are thoroughly detailed in the accompanying thesis document, heavily based on the theoretical frameworks provided by:
 
 * Dolean, V., Jolivet, P., & Nataf, F. (2015). An Introduction to Domain Decomposition Methods.
 * Saad, Y. (2003). Iterative Methods for Sparse Linear Systems (2nd ed.). SIAM.
+
+## License
+
+This project is open-source software licensed under the [MIT License](https://opensource.org/license/mit).
